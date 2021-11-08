@@ -1,0 +1,103 @@
+.header{
+    z-index: 100;
+    background-color: rgba(153, 153, 153, 0.8);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;     
+    top: 0;
+    transition: opacity .5s ease-out; 
+    h1 {
+        float: left;
+        margin-left: 3%;
+        .logo{
+            // text-indent: 101%;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 120px;
+            height: 34px;
+            display: block;
+            img{
+                max-width: 100%;
+            }
+        }
+    }
+    .menubar{
+        float: right;
+        li {
+            float: left;
+            width: 180px;
+            text-align: center;
+            a{
+                text-decoration: none;
+                color:#fff;
+                font-size: 1.3em;
+            }
+            a:hover{
+                color:#f2ce2b;
+                cursor: pointer;
+                font-weight: bolder;
+                text-shadow: 0 0 0.2em #000;
+                font-size:1.5em
+            }
+            .menubar-list{
+                display: none;
+                li{
+                    margin-top: 15px;
+                    a{
+                        font-size: 1em;
+                    }
+                }
+            }
+        }
+    }
+    .showmenu{
+        display: none;  
+    }
+}
+
+@media (max-width: 768px){
+    .header{
+        .menubar{
+            /*隱藏選單開始*/
+            display: none;
+            /*隱藏選單結束*/
+            /*漸變效果*/
+            transition: max-height 2.3s;
+            /*絕對定位疊在網頁上*/
+            position: absolute;
+            /*權重*/
+            z-index: 100;
+            /*header 80px+1px boder 線條*/
+            top: 64px;
+            /* left:0 right:0表示滿版 */
+            left: 0;
+            right: 0;
+            background: #0F222B;
+            li{
+                float: none ;
+                width: 100% ;
+                
+            }
+            li:hover{
+                background-color: lightgray;
+                a{
+                    color: #000;
+                }
+            }
+        }
+        .showmenu{
+            display: block;
+            float: right;
+            border: 1px solid #fff;
+            margin-right: 15px;
+            padding: 6px;
+            border-radius: 5px;
+            .fas{
+                font-size: 1.2em;
+                color: #fff;
+            }
+        }
+    }
+}

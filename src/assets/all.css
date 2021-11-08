@@ -1,0 +1,463 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*CSS RESET END*/
+.signin {
+  height: 100vh;
+  background: -webkit-gradient(linear, left bottom, right top, from(#d16ba5), color-stop(#c777b9), color-stop(#ba83ca), color-stop(#aa8fd8), color-stop(#9a9ae1), color-stop(#52cffe), to(#41dfff));
+  background: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #52cffe, #41dfff);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.signin .login {
+  margin: auto;
+  width: 100%;
+  max-width: 350px;
+}
+
+.signin .login h1 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 8%;
+  color: #fff;
+  font-weight: bolder;
+}
+
+.signin .login .login_input {
+  display: block;
+}
+
+.signin .login .login_input span {
+  position: absolute;
+  padding: 6px 8px;
+}
+
+.signin .login .login_input .form-control {
+  margin: 16px 0;
+  font-size: 18px;
+  border: 1px solid;
+  border-radius: 8px;
+  padding-left: 45px;
+}
+
+.signin .login .btn-sign {
+  width: 75%;
+  height: 35px;
+  text-align: center;
+  font-size: 16px;
+  background-color: rgba(123, 123, 123, 0.75);
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 900;
+  -webkit-box-shadow: 10px 10px 14px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 10px 10px 14px 1px rgba(0, 0, 0, 0.2);
+  border: none;
+  margin: 25px auto;
+  display: block;
+  color: #fff;
+}
+
+.signin .login .btn-sign:hover {
+  background-color: #86A8E7;
+}
+
+body {
+  font-size: .875rem;
+}
+
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+/*
+   * Sidebar
+   */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  /* Behind the navbar */
+  padding-top: 40px;
+  -webkit-box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+          box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    top: 5rem;
+  }
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #727272;
+}
+
+.sidebar .nav-link.active {
+  color: #007bff;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+/*
+   * Navbar
+   */
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);
+          box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);
+}
+
+.navbar {
+  position: fixed;
+  right: 0;
+  left: 0;
+}
+
+.navbar .navbar-toggler {
+  top: .25rem;
+  right: 1rem;
+}
+
+.navbar .form-control {
+  padding: .75rem 1rem;
+  border-width: 0;
+  border-radius: 0;
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-control-dark:focus {
+  border-color: transparent;
+  -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+          box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+/*main*/
+main {
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  main {
+    margin-top: 60px !important;
+  }
+}
+
+.header {
+  z-index: 100;
+  background-color: rgba(153, 153, 153, 0.8);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  -webkit-transition: opacity .5s ease-out;
+  transition: opacity .5s ease-out;
+}
+
+.header h1 {
+  float: left;
+  margin-left: 3%;
+}
+
+.header h1 .logo {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 120px;
+  height: 34px;
+  display: block;
+}
+
+.header h1 .logo img {
+  max-width: 100%;
+}
+
+.header .menubar {
+  float: right;
+}
+
+.header .menubar li {
+  float: left;
+  width: 180px;
+  text-align: center;
+}
+
+.header .menubar li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.3em;
+}
+
+.header .menubar li a:hover {
+  color: #f2ce2b;
+  cursor: pointer;
+  font-weight: bolder;
+  text-shadow: 0 0 0.2em #000;
+  font-size: 1.5em;
+}
+
+.header .menubar li .menubar-list {
+  display: none;
+}
+
+.header .menubar li .menubar-list li {
+  margin-top: 15px;
+}
+
+.header .menubar li .menubar-list li a {
+  font-size: 1em;
+}
+
+.header .showmenu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header .menubar {
+    /*隱藏選單開始*/
+    display: none;
+    /*隱藏選單結束*/
+    /*漸變效果*/
+    -webkit-transition: max-height 2.3s;
+    transition: max-height 2.3s;
+    /*絕對定位疊在網頁上*/
+    position: absolute;
+    /*權重*/
+    z-index: 100;
+    /*header 80px+1px boder 線條*/
+    top: 64px;
+    /* left:0 right:0表示滿版 */
+    left: 0;
+    right: 0;
+    background: #0F222B;
+  }
+  .header .menubar li {
+    float: none;
+    width: 100%;
+  }
+  .header .menubar li:hover {
+    background-color: lightgray;
+  }
+  .header .menubar li:hover a {
+    color: #000;
+  }
+  .header .showmenu {
+    display: block;
+    float: right;
+    border: 1px solid #fff;
+    margin-right: 15px;
+    padding: 6px;
+    border-radius: 5px;
+  }
+  .header .showmenu .fas {
+    font-size: 1.2em;
+    color: #fff;
+  }
+}
+
+body {
+  font-family: 'Balsamiq Sans','微軟正黑體',  cursive;
+}
+
+.app {
+  background-color: #c4cbcf;
+  height: 100vh;
+}
+
+.web {
+  background-color: #c4cbcf;
+  min-height: 100vh !important;
+}
+
+.web .menu_container {
+  margin-top: 64px;
+}
+
+.web .menu_container .cart {
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 3%;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  z-index: 100;
+}
+
+.web .menu_container .cart .cartsnum {
+  position: absolute;
+  color: #fff;
+  font-size: 0.875rem;
+  background-color: #dc3545;
+  right: -7px;
+  top: 0px;
+  line-height: 1rem;
+  min-width: 1rem;
+  padding: 0 4px;
+  border-radius: 0.725rem;
+}
+
+.web .menu_container .cart .fa-shopping-basket, .web .menu_container .cart .fa-heart {
+  font-size: 1.5em;
+  line-height: 40px;
+}
+
+.web .menu_container .form-mobile {
+  display: none;
+}
+
+.web .menu_container .card-title {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.web .menu_container .h5 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .web .menu_container .form-mobile {
+    display: block;
+  }
+  .web .menu_container .nav {
+    display: none;
+  }
+}
+
+@media (max-width: 414px) {
+  .web .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+.product {
+  margin-top: 64px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #a7a8bd;
+}
+
+.product .productImg {
+  margin: 10px auto;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.product .producttext .productcat {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+.product .producttext .producttitle {
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+.product .producttext .productdes {
+  font-size: 1.1em;
+  color: #1ba784;
+}
+
+.rommand {
+  margin-top: 10px;
+}
+/*# sourceMappingURL=all.css.map */

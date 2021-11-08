@@ -1,0 +1,106 @@
+.container .cart {
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 3%;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  z-index: 100;
+}
+
+.container .cart .cartsnum {
+  position: absolute;
+  color: #fff;
+  font-size: 0.875rem;
+  background-color: #dc3545;
+  right: -7px;
+  top: 0px;
+  line-height: 1rem;
+  min-width: 1rem;
+  padding: 0 4px;
+  border-radius: 0.725rem;
+}
+
+.container .cart .fa-shopping-basket, .container .cart .fa-heart {
+  font-size: 1.5em;
+  line-height: 40px;
+}
+
+.container .back {
+  margin-top: 80px;
+}
+
+.container .product {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #a7a8bd;
+}
+
+.container .product .row {
+  padding-top: 20px;
+}
+
+.container .product .row .productImg {
+  margin: 10px auto;
+  height: 320px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container .product .row .producttext {
+  padding: 0 30px;
+}
+
+.container .product .row .producttext .productcat {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+.container .product .row .producttext .producttitle {
+  font-size: 1.5em;
+  font-weight: bolder;
+  padding: 10px;
+  border: 1px dashed;
+  letter-spacing: 1px;
+}
+
+.container .product .row .producttext table {
+  margin-bottom: 40px;
+}
+
+.container .product .row .producttext table th {
+  width: 100px;
+  vertical-align: middle;
+  text-align: left;
+  font-size: 1em;
+  font-size: 16px;
+}
+
+.container .product .row .producttext table td {
+  text-align: left;
+  font-size: 16px;
+}
+
+.container .product .row .producttext table td .form-control {
+  font-size: 1em;
+  height: auto;
+}
+
+.container .rommand {
+  padding-bottom: 10px;
+}
+
+.container .rommand .h4 {
+  margin-top: 15px;
+}
+
+.container .rommand .productdes {
+  width: 80%;
+  margin: 20px auto;
+  font-size: 18px;
+  line-height: 1.8em;
+}
+/*# sourceMappingURL=product.css.map */
