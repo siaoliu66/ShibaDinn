@@ -4,13 +4,13 @@
     </h1>
     <ul class="menubar" :class="{'active': showTopMenu}">
       <li>
-        <router-link class="nav-link" to="/aboutUs"> 代購運費計算機 </router-link>
-      </li>
-      <li>
         <router-link class="nav-link" to="/menu"> 團購商品 </router-link>
+      </li>      
+      <li>
+        <router-link class="nav-link" to="/cal"> 代購運費計算機 </router-link>
       </li>
     <li>
-        <router-link class="nav-link" to="/menu"> 購物須知 </router-link>
+        <router-link class="nav-link" to="/shopping"> 購物須知 </router-link>
       </li>
       <li>
         <router-link class="nav-link" to="/login" target="_blank">

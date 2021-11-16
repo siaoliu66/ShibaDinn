@@ -20,6 +20,13 @@
                             訂單列表
                         </router-link>
                     </li>
+                    <li class="nav-item">
+                        <router-link class="nav-link" to="/admin/coupon">
+                            <span data-feather="file"></span>
+                        <i class="fas fa-percent"></i>
+                            優惠券列表
+                        </router-link>
+                    </li>
                 </ul>
             </div>
         </nav>

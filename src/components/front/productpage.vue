@@ -85,17 +85,18 @@
         </div>
       </div>
     </div>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import menubar from "./topmenu";
 import alert from "../alertMesseges";
-import $ from 'jquery'
+import Footer from "./footer.vue";
 
 export default {
   components: {
-    menubar,alert
+    menubar,alert,Footer
   },
   data() {
     return {

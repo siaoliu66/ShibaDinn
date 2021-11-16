@@ -1,61 +1,130 @@
-.signin {
-  height: 100vh;
-  background: -webkit-gradient(linear, left bottom, right top, from(#d16ba5), color-stop(#c777b9), color-stop(#ba83ca), color-stop(#aa8fd8), color-stop(#9a9ae1), color-stop(#52cffe), to(#41dfff));
-  background: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #52cffe, #41dfff);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+body {
+  font-family: "Karla", sans-serif;
+  background-color: #d0d0ce;
+  min-height: 100vh;
 }
 
-.signin .login {
-  margin: auto;
-  width: 100%;
-  max-width: 350px;
+main {
+  margin: 0px;
+  background-color: #d0d0ce;
 }
 
-.signin .login h1 {
-  font-size: 32px;
-  text-align: center;
-  margin-bottom: 8%;
-  color: #fff;
-  font-weight: bolder;
+.brand-wrapper {
+  margin-bottom: 19px;
 }
 
-.signin .login .login_input {
-  display: block;
+.brand-wrapper .logo {
+  height: 220px;
 }
 
-.signin .login .login_input span {
+.login-card {
+  border: 0;
+  border-radius: 27.5px;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
+          box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
+  overflow: hidden;
+}
+
+.login-card-img {
+  border-radius: 0;
   position: absolute;
-  padding: 6px 8px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
-.signin .login .login_input .form-control {
-  margin: 16px 0;
-  font-size: 18px;
-  border: 1px solid;
-  border-radius: 8px;
-  padding-left: 45px;
+.login-card .card-body {
+  padding: 85px 60px 60px;
 }
 
-.signin .login .btn-sign {
-  width: 75%;
-  height: 35px;
-  text-align: center;
-  font-size: 16px;
-  background-color: rgba(123, 123, 123, 0.75);
-  border-radius: 10px;
-  font-size: 20px;
-  font-weight: 900;
-  -webkit-box-shadow: 10px 10px 14px 1px rgba(0, 0, 0, 0.2);
-          box-shadow: 10px 10px 14px 1px rgba(0, 0, 0, 0.2);
-  border: none;
-  margin: 25px auto;
-  display: block;
+@media (max-width: 422px) {
+  .login-card .card-body {
+    padding: 35px 24px;
+  }
+}
+
+.login-card-description {
+  font-size: 25px;
+  color: #000;
+  font-weight: normal;
+  margin-bottom: 23px;
+}
+
+.login-card form {
+  max-width: 326px;
+}
+
+.login-card .form-control {
+  border: 1px solid #d5dae2;
+  padding: 15px 25px;
+  margin-bottom: 20px;
+  min-height: 45px;
+  font-size: 13px;
+  line-height: 15;
+  font-weight: normal;
+}
+
+.login-card .form-control::-webkit-input-placeholder {
+  color: #919aa3;
+}
+
+.login-card .form-control:-ms-input-placeholder {
+  color: #919aa3;
+}
+
+.login-card .form-control::-ms-input-placeholder {
+  color: #919aa3;
+}
+
+.login-card .form-control::placeholder {
+  color: #919aa3;
+}
+
+.login-card .login-btn {
+  padding: 13px 20px 12px;
+  background-color: #000;
+  border-radius: 4px;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 20px;
   color: #fff;
+  margin-bottom: 24px;
 }
 
-.signin .login .btn-sign:hover {
-  background-color: #86A8E7;
+.login-card .login-btn:hover {
+  border: 1px solid #000;
+  background-color: transparent;
+  color: #000;
+}
+
+.login-card .forgot-password-link {
+  font-size: 14px;
+  color: #919aa3;
+  margin-bottom: 12px;
+}
+
+.login-card-footer-text {
+  font-size: 16px;
+  color: #0d2366;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 767px) {
+  .login-card-footer-text {
+    margin-bottom: 24px;
+  }
+}
+
+.login-card-footer-nav a {
+  font-size: 14px;
+  color: #919aa3;
+}
+
+.footer-link {
+  position: absolute;
+  bottom: 1rem;
+  text-align: center;
+  width: 100%;
 }
 /*# sourceMappingURL=login.css.map */

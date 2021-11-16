@@ -18,6 +18,12 @@ import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
 Vue.component('Loading',Loading)
 
+
+// //CKEditor註冊到vue原型上
+import CKEditor from 'ckeditor4-vue';
+
+Vue.use( CKEditor );
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

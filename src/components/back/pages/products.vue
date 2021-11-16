@@ -95,6 +95,7 @@
                         <hr>
                         <div class="form-group">
                         <label for="description">產品描述</label>
+                        <!-- <textarea name="editor1" v-model="tempProduct.description"></textarea> -->
                         <textarea type="text" class="form-control" id="description"
                             placeholder="請輸入產品描述"  v-model="tempProduct.description"></textarea>
                         </div>
@@ -148,9 +149,11 @@
 import $ from "jquery";
 import pagination from '@/components/pagination'
 
+
+
 export default {
     components:{
-        pagination
+        pagination,
     },
     data() {
         return {
@@ -161,7 +164,7 @@ export default {
             status:{
                 Fileuploading:false
             },
-            pagination:{}
+            pagination:{},
         }
     },
     methods: {
@@ -240,6 +243,6 @@ export default {
     },
     created() {
         this.getProducts();
-    }
+    },
 }
 </script>

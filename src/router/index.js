@@ -1,13 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Index from '@/components/front/index'
+import Cal from '@/components/front/cal'
 import Login from '@/components/back/login'
 import dashboard from '@/components/back/dashboard'
 import Product from '@/components/back/pages/products'
 import Order from '@/components/back/pages/orders'
+import Coupon from '@/components/back/pages/coupon'
 import Menu from '@/components/front/menu'
 import Productpage from '@/components/front/productpage'
 import Cart from '@/components/front/cart'
+import Shopping from '@/components/front/shopping'
 Vue.use(Router)
 
 export default new Router({
@@ -15,13 +17,13 @@ export default new Router({
     {
       path: '*',
       redirect:{
-        path: '/index',
+        path: '/menu',
       }
     },
     {
-      path: '/index',
-      name: 'index',
-      component: Index,
+      path: '/cal',
+      name: 'Cal',
+      component: Cal,
     },
     {
       path: '/login',
@@ -44,6 +46,11 @@ export default new Router({
       component: Cart,
     },
     {
+      path: '/shopping',
+      name: 'Shopping',
+      component: Shopping,
+    },
+    {
       path: '/admin',
       name: 'dashboard',
       component: dashboard,
@@ -60,12 +67,12 @@ export default new Router({
           component: Order,
           meta: { requiresAuth: true },
         },
-        // {
-        //   path: 'coupon',
-        //   name: 'Coupon',
-        //   component: Coupon,
-        //   meta: { requiresAuth: true },
-        // },
+        {
+          path: 'coupon',
+          name: 'Coupon',
+          component: Coupon,
+          meta: { requiresAuth: true },
+        },
       ]
     },
   ]

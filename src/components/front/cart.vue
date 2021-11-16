@@ -120,6 +120,7 @@
                 
             </div>
         </div>
+        <Footer/>
     </div>
 </template>
 <style lang="scss" scoped>
@@ -164,11 +165,11 @@
 <script>
 import menubar from './topmenu'
 import alert from '../alertMesseges'
-// import $ from 'jquery'
+import Footer from "./footer.vue";
 
 export default {
     components: {
-        menubar,alert
+        menubar,alert,Footer
     },
     data() {
         return {
