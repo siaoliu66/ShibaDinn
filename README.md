@@ -1,6 +1,7 @@
 # shibadinn
 
-> A Vue.js project
+> 前台畫面
+> https://siaoliu66.github.io/ShibaDinn/
 
 ## Build Setup
 
