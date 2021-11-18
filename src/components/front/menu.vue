@@ -7,6 +7,11 @@
         <menubar />
       </div>
       <div class="menu_container">
+        <div class="banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://i.pinimg.com/564x/e1/ed/d3/e1edd3acae760bd6ee50c2424dd7caa7.jpg')">
+            <div class="bannerText">
+              <h3>各式各樣的商品 任君挑選</h3>
+            </div>
+        </div>
         <!-- 購物車 -->
         <div class="cart">
           <a href="#/cart" class="">
@@ -25,7 +30,7 @@
             </ol>
           </nav>
           <div class="row">
-            <div class=" col-md-3 col-lg-2">
+            <div class=" col-md-3">
               <!-- 手機版分類選單 -->
               <div class="form-mobile">
                 <select
@@ -90,34 +95,33 @@
               </ul>
             </div>
 
-            <div class=" col-md-9 col-lg-10 ml-sm-auto px-md-4">
+            <div class=" col-md-9  ml-sm-auto px-md-4">
               <div class="row mt-4">
                 <div
                   class="col-lg-4 col-md-6 mb-4"
                   v-for="item in filterProducts"
                   :key="item.id"
                 >
-                  <div class="card border-0 shadow-sm">
+                  <div class="card shadow-sm">
                     <div
                       style="
-                        height: 200px;
+                        height: 180px;
                         background-size: cover;
                         background-position: center;
                       "
                       :style="{ backgroundImage: `url(${item.imageUrl})` }"
                     ></div>
-                    <div class="card-body d-flex justify-content-between align-item-center">
+                    <div class="card-body">
                       <h5 class="card-title">
                         {{ item.title }}
                       </h5>
-                      <span class="badge badge-secondary float-right ml-2">{{
+                      <span class="badge badge-secondary float-right">{{
                         item.category
                       }}</span>
-                      
                     </div>
                     <div class="card-footer d-flex justify-content-between align-item-center">
-                        <div class="h5" v-if="item.price">
-                          現在只要 <span style="color:#ee3f4d">{{ item.price | currency }} </span>元
+                      <div class="h5">
+                           只要<span style="color:#ee3f4d">{{ item.price | currency }} 元 </span>
                         </div>
                       <button
                         type="button"
@@ -130,17 +134,6 @@
                         ></i>
                         查看更多
                       </button>
-                      <!-- <button
-                        type="button"
-                        class="btn btn-outline-danger btn-sm ml-auto"
-                        @click.prevent="addTocart(item.id)"
-                      >
-                        <i
-                          class="fas fa-spinner fa-spin"
-                          v-if="status.isLoadingitem === item.id"
-                        ></i>
-                        加到購物車
-                      </button> -->
                     </div>
                   </div>
                 </div>
@@ -153,32 +146,8 @@
     <Footer/>
   </div>
 </template>
-<style lang="scss" scoped>
-.nav {
-  margin-top: 30px;
-  .nav-item {
-    font-size: 1.3em;
-  }
-  .active {
-    color: #fff;
-    background-color: #007bff;
-  }
-}
-span.badge {
-  font-size: 1em;
-}
-.img-fluid {
-  height: 310px;
-  background-size: cover;
-  background-position: center center;
-}
-@media (max-width: 1140px) {
-  .h5,
-  .h6 {
-    font-size: 1em;
-  }
-}
-</style>
+<style src="@/assets/customcss/card.css" scoped></style>
+
 <script>
 import menubar from "./topmenu";
 import alert from '../alertMesseges'

@@ -8,6 +8,8 @@ body {
 
 .web {
   padding-top: 25px;
+  padding-bottom: 20px;
+  min-height: 750px;
 }
 
 .web .wrap {

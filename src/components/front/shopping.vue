@@ -4,7 +4,10 @@
       <menubar />
     </div>
     <div class="container">
-
+      <div class="intro">
+        <img src="@/assets/img/shippinglist.png" alt="">
+      </div>
+        
     </div>
     <Footer/>
   </div>
@@ -28,8 +31,17 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .container {
   margin-top: 64px;
+  height: 680px;
+  .intro{
+    padding: 3%;
+    display: flex;
+    justify-content: center;
+    img{
+      width: 80%;
+    }
+  }
 }
 </style>

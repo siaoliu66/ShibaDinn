@@ -1,6 +1,6 @@
 .header{
     z-index: 100;
-    background-color: rgba(153, 153, 153, 0.8);
+    background-color:#fff;
     padding-top: 15px;
     padding-bottom: 15px;
     width: 100%;
@@ -8,19 +8,21 @@
     position: fixed;     
     top: 0;
     transition: opacity .5s ease-out; 
+    box-shadow: 0 2px 8px #6c757d;
     h1 {
         float: left;
-        margin-left: 3%;
+        margin-left: 2%;
         .logo{
-            // text-indent: 101%;
             overflow: hidden;
             white-space: nowrap;
-            width: 120px;
+            width: 250px;
             height: 34px;
             display: block;
-            img{
-                max-width: 100%;
-            }
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            // background-image: url(../static/img/logo.jpg);
+            background-image: url(https://github.com/siaoliu66/ShibaDinn/blob/gh-pages/static/img/logo.png?raw=true);
         }
     }
     .menubar{
@@ -31,15 +33,15 @@
             text-align: center;
             a{
                 text-decoration: none;
-                color:#fff;
+                color:#6c757d;
                 font-size: 1.3em;
             }
             a:hover{
-                color:#f2ce2b;
                 cursor: pointer;
-                font-weight: bolder;
-                text-shadow: 0 0 0.2em #000;
-                font-size:1.5em
+                font-weight: 500;
+                font-size:1.5em;
+                transform: scale(0.95);
+                text-decoration:underline
             }
             .menubar-list{
                 display: none;

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 .header {
   z-index: 100;
-  background-color: rgba(153, 153, 153, 0.8);
+  background-color: #fff;
   padding-top: 15px;
   padding-bottom: 15px;
   width: 100%;
@@ -10,23 +10,25 @@
   top: 0;
   -webkit-transition: opacity .5s ease-out;
   transition: opacity .5s ease-out;
+  -webkit-box-shadow: 0 2px 8px #6c757d;
+          box-shadow: 0 2px 8px #6c757d;
 }
 
 .header h1 {
   float: left;
-  margin-left: 3%;
+  margin-left: 2%;
 }
 
 .header h1 .logo {
   overflow: hidden;
   white-space: nowrap;
-  width: 120px;
+  width: 250px;
   height: 34px;
   display: block;
-}
-
-.header h1 .logo img {
-  max-width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://github.com/siaoliu66/ShibaDinn/blob/gh-pages/static/img/logo.png?raw=true);
 }
 
 .header .menubar {
@@ -41,16 +43,17 @@
 
 .header .menubar li a {
   text-decoration: none;
-  color: #fff;
+  color: #6c757d;
   font-size: 1.3em;
 }
 
 .header .menubar li a:hover {
-  color: #f2ce2b;
   cursor: pointer;
-  font-weight: bolder;
-  text-shadow: 0 0 0.2em #000;
+  font-weight: 500;
   font-size: 1.5em;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  text-decoration: underline;
 }
 
 .header .menubar li .menubar-list {

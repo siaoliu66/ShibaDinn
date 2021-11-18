@@ -9,7 +9,6 @@
         <tr>
           <th width="120">分類</th>
           <th>產品名稱</th>
-          <th width="120">原價</th>
           <th width="120">售價</th>
           <th width="100">是否啟用</th>
           <th width="120">功能</th>
@@ -19,9 +18,6 @@
         <tr v-for="(item) in products" :key="item.id">
           <td>{{ item.category }}</td>
           <td>{{ item.title }}</td>
-          <td class="text-left">
-            {{ item.origin_price | currency}}
-          </td>
           <td class="text-left">
             {{ item.price | currency}}
           </td>

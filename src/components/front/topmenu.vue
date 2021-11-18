@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1><router-link class="logo" to="/index"><img :src="`./static/img/logo.jpg`"></router-link>
+    <h1><router-link class="logo" to="/index"></router-link>
     </h1>
     <ul class="menubar" :class="{'active': showTopMenu}">
       <li>
@@ -13,8 +13,8 @@
         <router-link class="nav-link" to="/shopping"> 購物須知 </router-link>
       </li>
       <li>
-        <router-link class="nav-link" to="/login" target="_blank">
-          商品管理
+        <router-link class="nav-link" to="/cart" target="_blank">
+          購物車
         </router-link>
       </li>
     </ul>

@@ -51,7 +51,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .footer .footer-menu .footer-link img {
@@ -59,6 +59,6 @@
 }
 
 .footer .footer-menu .copyright {
-  color: #666769;
+  color: #c4cbcf;
 }
 /*# sourceMappingURL=footer.css.map */

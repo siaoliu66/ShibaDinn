@@ -4,6 +4,9 @@ body {
   }
   .web{
     padding-top: 25px;
+    padding-bottom: 20px;
+    min-height: 750px;
+    // height: calc( 100vh - 172px);
     .wrap {
         max-width: 588px;
         padding: 15px;
