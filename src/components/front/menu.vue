@@ -12,13 +12,13 @@
               <h3>各式各樣的商品 任君挑選</h3>
             </div>
         </div>
-        <!-- 購物車 -->
+        <!-- 購物車 
         <div class="cart">
           <a href="#/cart" class="">
             <span class="cartsnum">{{ totalQty }}</span>
             <i class="fas fa-shopping-basket"></i>
           </a>
-        </div> 
+        </div> -->
 
         <div class="container pt-4">
           <nav aria-label="breadcrumb">
