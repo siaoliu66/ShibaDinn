@@ -1,25 +1,60 @@
 <template>
   <div>
     <loading :active.sync="isLoading"></loading>
+    <div class="top">
+      <div class="search">
+        <div class="input-group">
+          <label class="input-group-text" for="inputGroupSelect01">搜尋條件</label>
+          <select class="form-select" id="inputGroupSelect01" v-model="searchType">
+            <option selected value="createId" @click="searchType = 'createId'">訂單編號</option>
+            <option value="date" @click="searchType = 'date'">日期</option>
+            <option value="name" @click="searchType = 'name'">訂購人</option>
+          </select>
+          <input type="text" id="searchBox" class="searchBox" v-model="searchVal">
+        </div>
+      </div>
+      <download-excel :data="lists" :fields="json_fields" class="export">
+        匯出報表
+      </download-excel>
+    </div>
     <table class="table mt-4">
       <thead>
         <tr>
+          <th>功能</th>
+          <th>訂單編號</th>
+          <th>購買人</th>
           <th>購買時間</th>
           <th>購買項目</th>
           <th>購買款項</th>
           <th>購買數量</th>
           <th>訂單金額</th>
           <th>是否附款</th>
-          <th>功能</th>
+          <th>訂單狀況</th> 
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in lists" :key="item.id">
+        <tr v-for="item in filterlist" :key="item.id">
+          <td>
+            <button
+              class="btn btn-outline-secondary btn-sm"
+              @click="openModal(item)"
+            >
+              查看
+            </button>
+            <button
+              class="btn btn-outline-primary btn-sm" v-if="!item.is_paid"
+              @click="editerModal(item)"
+            >
+              編輯
+            </button>
+          </td>
+          <td>{{ item.id }}</td>
+          <td>{{ item.user.name }}</td>
           <td>{{ item.create_at }}</td>
           <td>
             <ul class="list-unstyled">
               <li v-for="productitem in item.products" :key="productitem.id">
-                {{ productitem.product.title }}
+                {{ productitem.product.title | ellipsis}}
               </li>
             </ul>
           </td>
@@ -38,20 +73,7 @@
           <td>{{ item.total | currency }}</td>
           <td v-if="item.is_paid" class="text-success">已付款</td>
           <td v-else class="text-danger">尚未付款</td>
-          <td>
-            <button
-              class="btn btn-outline-secondary btn-sm"
-              @click="openModal(item)"
-            >
-              查看
-            </button>
-            <button
-              class="btn btn-outline-primary btn-sm" v-if="!item.is_paid"
-              @click="editerModal(item)"
-            >
-              編輯
-            </button>
-          </td>
+          <th>未出貨</th> 
         </tr>
       </tbody>
     </table>
@@ -338,6 +360,38 @@
     }
   }
 }
+.export{
+  margin: 10px;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  display: block;
+  float:right;
+}
+.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .search{
+      width: 70%;
+      .input-group{
+        .form-select{
+          width: 20%;
+          border: 1px solid #c4cbcf;
+        }
+        .searchBox{
+          width: 40%;
+          margin-left: 5px;
+          border: 1px solid #c4cbcf;
+        }
+    }
+    }    
+}
 </style>
 <script>
 import $ from "jquery";
@@ -349,10 +403,64 @@ export default {
     },
   data() {
     return {
+      searchVal:'',
+      searchType:'createId',
       lists: [],
       tempProduct: {},
       isLoading: false,
-      pagination:{}
+      pagination:{},
+      //產報表data
+      json_fields: {
+        訂單編號: "id",
+        購買日期: "create_at",
+        購買人: {
+            field: "user",
+            callback: (value) => {
+                return `${value.name}`;
+            },
+        },
+        產品名稱: {
+            field: "products",
+            callback: (value) => {
+                let title = "";
+                Object.keys(value).forEach(i => {
+                title += `${value[i].product.title},`;
+                });
+                return title;
+            },
+        },
+        產品款式: {
+            field: "products",
+            callback: (value) => {
+                let unit = "";
+                Object.keys(value).forEach(i => {
+                unit += `${value[i]["unit"]}\n`;
+                });
+                return unit;
+            },
+        },
+        產品數量: {
+            field: "products",
+            callback: (value) => {
+                let num = "";
+                Object.keys(value).forEach(i => {
+                num += `${value[i]["qty"]}\n`;
+                });
+                return num;
+            },
+        },
+        訂單總金額:"total",
+        付款狀況: "is_paid",
+        付款日期:"paid_date"
+        },
+        json_meta: [
+        [
+          {
+            key: "charset",
+            value: "utf-8",
+          },
+        ],
+      ],
     };
   },
   methods: {
@@ -365,7 +473,7 @@ export default {
           vm.isLoading = false;
           vm.lists = response.data.orders;
           vm.pagination = response.data.pagination
-
+          console.log(vm.lists);
           vm.lists.forEach((item) => {
             const dates1 = new Date(item.create_at * 1000);
             const year = dates1.getFullYear();
@@ -378,14 +486,19 @@ export default {
             const date2 = dates2.getDate();
             item.paid_date = `${year2}/${month2}/${date2}`;
           }); //讓Unix Timestamp轉回一般日期格式顯示
+          this.asd()
         });
+        
     },
     payOrder(){
             const vm = this;
+            vm.isLoading = true
             const url = `${process.env.APIPATH}/api/${process.env.APIID}/pay/${vm.tempProduct.id}`
             this.$http.post(url).then((response) => {                
                 console.log(response.data);
                 this.getOrders();
+                vm.isLoading = false
+                $("#editerModal").modal("hide");
             });
         },
     openModal(item) {
@@ -396,6 +509,59 @@ export default {
       this.tempProduct = Object.assign({}, item);
       $("#editerModal").modal("show");
     },
+    asd(){
+      this.lists.forEach(i =>{
+        var value = i.products
+        // console.log(value[Object.keys(value)])
+        // value.forEach(function(item){
+        //   console.log(item)
+        // })
+        Object.keys(value).forEach(i => {
+           console.log(value[i].title);
+        });
+      })
+    },
+  },
+  computed: {
+    filterlist: function (){
+      const vm = this
+        if(vm.searchVal == ''){
+          return vm.lists
+      }else{
+        var filterlist = []
+        if(vm.searchType == 'createId'){
+          vm.lists.forEach(function(item){
+              if(item.id.indexOf(vm.searchVal) != -1){
+                filterlist.push(item);
+              }
+            })
+          return filterlist
+        }else if(vm.searchType == 'date'){
+          vm.lists.forEach(function(item){
+              if(item.create_at.indexOf(vm.searchVal) != -1){
+                filterlist.push(item);
+              }
+            })
+         return filterlist
+        }else{
+          vm.lists.forEach(function(item){
+              if(item.user.name.indexOf(vm.searchVal) != -1){
+                filterlist.push(item);
+              }
+            })
+         return filterlist
+        }
+      }
+    }
+  },
+  filters:{
+    ellipsis (value) {
+      if (!value) return ''
+      if (value.length > 5) {
+        return value.slice(0,5) + '...'
+      }
+      return value
+    }
   },
   created() {
     this.getOrders();

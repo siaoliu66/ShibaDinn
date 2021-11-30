@@ -27,6 +27,13 @@
                             優惠券列表
                         </router-link>
                     </li>
+                    <!-- <li class="nav-item">
+                        <router-link class="nav-link" to="/admin/editor">
+                            <span data-feather="file"></span>
+                        <i class="fas fa-percent"></i>
+                            editor
+                        </router-link>
+                    </li> -->
                 </ul>
             </div>
         </nav>
@@ -34,19 +41,22 @@
 </template>
 
 <style lang="scss" scoped>
-        .togglemenu{
-            display: none;
-            width: 100%;
-            background-color: #343a40;
+    .togglemenu{
+        display: none;
+        width: 100%;
+        background-color: #343a40;
+        color:#fff;
+        position: absolute;
+        top: 38px;
+        left: 0px;
+        padding: 8px;
+        a{
             color:#fff;
-            position: absolute;
-            top: 38px;
-            left: 0px;
-            padding: 8px;
-            a{
-                color:#fff;
-                padding-left: 10px;
-            }
+            padding-left: 10px;
+        }
+    }
+    i.fas{
+            width: 20px;
         }
 
 @media (max-width:768px) {

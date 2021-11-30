@@ -97,10 +97,12 @@ body {
   font-size: 1.1em;
 }
 
-/*手機板*/
-@media screen and (max-width: 414px) {
-  body {
-    height: auto;
+/*pad*/
+@media screen and (max-width: 768px) {
+  .web {
+    min-height: auto;
   }
 }
+
+/*手機板*/
 /*# sourceMappingURL=cal.css.map */

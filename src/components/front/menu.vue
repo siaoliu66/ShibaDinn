@@ -9,16 +9,16 @@
       <div class="menu_container">
         <div class="banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://i.pinimg.com/564x/e1/ed/d3/e1edd3acae760bd6ee50c2424dd7caa7.jpg')">
             <div class="bannerText">
-              <h3>各式各樣的商品 任君挑選</h3>
+              <h3>日本團購 喜歡就趕快下單吧</h3>
             </div>
         </div>
-        <!-- 購物車 
+        <!-- 購物車 -->
         <div class="cart">
           <a href="#/cart" class="">
             <span class="cartsnum">{{ totalQty }}</span>
             <i class="fas fa-shopping-basket"></i>
           </a>
-        </div> -->
+        </div> 
 
         <div class="container pt-4">
           <nav aria-label="breadcrumb">
@@ -30,7 +30,7 @@
             </ol>
           </nav>
           <div class="row">
-            <div class=" col-md-3">
+            <div class=" col-md-2">
               <!-- 手機版分類選單 -->
               <div class="form-mobile">
                 <select
@@ -95,7 +95,7 @@
               </ul>
             </div>
 
-            <div class=" col-md-9  ml-sm-auto px-md-4">
+            <div class=" col-md-10  ml-sm-auto px-md-5">
               <div class="row mt-4">
                 <div
                   class="col-lg-4 col-md-6 mb-4"
@@ -121,7 +121,7 @@
                     </div>
                     <div class="card-footer d-flex justify-content-between align-item-center">
                       <div class="h5">
-                           只要<span style="color:#ee3f4d">{{ item.price | currency }} 元 </span>
+                           <span style="color:#ee3f4d">{{ item.price | currency }} 元 </span>
                         </div>
                       <button
                         type="button"

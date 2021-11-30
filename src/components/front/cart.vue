@@ -19,12 +19,12 @@
                                     <span>{{ cart.total | currency }}</span>
                                 </div>
                                 <div class="card-text d-flex justify-content-between mb-2 pb-2 border-bottom">
-                                    <span>折扣</span>
-                                    <span>{{ cart.final_total-cart.total | currency }}</span>
+                                    <span>超商運費</span>
+                                    <span>60</span>
                                 </div>
                                 <div class="card-text d-flex justify-content-between align-items-center">
                                     <span>應付總額</span>
-                                    <span class="text-danger font-weight-bolder h5">{{ cart.final_total | currency }}</span>
+                                    <span class="text-danger font-weight-bolder h5">{{ cart.final_total+60 | currency }}</span>
                                 </div>
                             </div>
                             
@@ -39,10 +39,10 @@
                             <table class="table ">
                                 <thead class="thead-light">
                                     <th>商品名稱</th>
-                                    <th width="100">數量</th>
-                                    <th width="100">款式</th>
-                                    <th width="100">總價</th>
-                                    <th width="100"></th>
+                                    <th>數量</th>
+                                    <th>款式</th>
+                                    <th>總價</th>
+                                    <th></th>
                                 </thead>
                                 <tbody>
                                     <tr v-for="item in cart.carts" :key="item.id">
@@ -89,16 +89,24 @@
                             <ValidationProvider rules="required" v-slot="{failed}">
                                 <div class="form-group">
                                     <label for="useraddress" class="m-1">訂購人LINE名稱</label>
-                                    <input type="text" class="form-control" name="address" id="useraddress" v-model="form.user.address"
+                                    <input type="text" class="form-control" name="line" id="userline" v-model="form.user.line"
                                         placeholder="請輸入LINE名稱">
                                     <span class="text-danger" v-if="failed">訂購人LINE名稱不得留空</span>
                                 </div>
                             </ValidationProvider>
+                            <ValidationProvider rules="required" v-slot="{failed}">
+                                <div class="form-group">
+                                    <label for="useraddress" class="m-1">收件資訊</label>
+                                    <input type="text" class="form-control" name="address" id="useraddress" v-model="form.user.address"
+                                        placeholder="請輸入超商、門市店號及店名(EX:711/164423/德昌)">
+                                    <span class="text-danger" v-if="failed">請輸入收件資訊</span>
+                                </div>
+                            </ValidationProvider>
                                 <div class="form-group">
                                 <label for="comment" class="m-1">留言</label>
-                                <textarea name="" id="comment" class="form-control" cols="30" rows="10" v-model="form.message"></textarea>
+                                <textarea name="" id="comment" class="form-control" cols="30" rows="10" v-model="form.message" placeholder="若要合併請在此留言訂單編號。"></textarea>
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="conpon" class="m-1">優惠碼</label>
                                     <div class="input-group mb-3">
                                         <input type="text" class="form-control" placeholder="請輸入優惠碼" v-model="conpon_code">
@@ -108,7 +116,7 @@
                                             </button>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="text-right">
                                     <router-link class="btn btn-primary" to="/menu"> 繼續點餐 </router-link>
                                     <button class="btn btn-danger" @click="createOrder()" :disabled="invalid">送出訂單</button>
@@ -182,7 +190,8 @@ export default {
                     name:'',
                     email:'',
                     tel:'',
-                    address:''
+                    address:'',
+                    line:''
                 },
                 message:''
             }
@@ -208,6 +217,7 @@ export default {
                 console.log(response.data)
                 this.getCarts()
                 vm.isLoading = false
+                this.$bus.$emit('message:push',"已刪除此商品",'success')
             })
         },
         addConponCode() {
@@ -239,7 +249,7 @@ export default {
                 if(response.data.success){
                     vm.isLoading = false;
                     this.$bus.$emit('message:push',"訂單已建立",'success')
-                    vm.$router.push(`/menu`)
+                    vm.$router.push(`/checkout/${response.data.orderId}`)
                 }else{
                     console.log(response.data.message);
                     vm.isLoading = false;

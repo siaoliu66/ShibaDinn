@@ -1,0 +1,46 @@
+@media screen and (max-width: 600px) {
+    .table {
+        border: 0 !important;     
+        caption {
+            font-size: 1.3em;
+        }
+                            
+        thead {
+            border: none;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+                            
+        tr {
+            background-color: rgba(211, 211, 211, 0.6);
+            border-bottom: 3px solid #ddd;
+            display: block;
+            margin-bottom: .625em;
+            
+        }
+                            
+        td {
+            border-bottom: 1px solid #ddd;
+            display: block;
+            font-size: 14px;
+            text-align: right;
+        }
+                            
+        td:before {
+            color: black;
+            content: attr(data-label);
+            float: left;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+                            
+        td:last-child {
+            border-bottom: 0;
+        }
+    }
+}

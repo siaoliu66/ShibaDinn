@@ -10,6 +10,7 @@
         text-align: center;
         line-height: 40px;
         z-index: 100;
+        border: 1px solid #c4cbcf;
         .cartsnum {
             position: absolute;
             color: #fff;
@@ -37,7 +38,7 @@
             padding-top: 20px;
             .productImg{
                 margin: 10px auto;
-                height: 320px;
+                height: 360px;
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -82,11 +83,25 @@
             margin-top: 15px;
         }
         .productdes{
-            width: 80%;
-            margin: 20px auto;
-            font-size: 18px;
+            margin-top: 20px;
             line-height: 1.8em;
-            text-align: center;
+            // img{
+            //     width: 100%;
+            // }
         }
     }
+}
+
+@media (max-width: 414px) {
+    .container{
+        .rommand{
+            .productdes {
+                width: 100%; 
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+     
 }

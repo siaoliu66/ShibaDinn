@@ -65,4 +65,7 @@ export default {
   right: 20px;
   z-index: 1100;
 }
+.alert-dismissible .close{
+  padding: 6px 0.25rem;
+}
 </style>

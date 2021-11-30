@@ -50,7 +50,7 @@
 }
 
 .row .card .card-body .card-title {
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin: 0;
   text-align: center;
 }
@@ -84,9 +84,15 @@
   background-position: center center;
 }
 
-@media (max-width: 1140px) {
-  .h5, .h6 {
+@media (max-width: 1080px) {
+  .card-body .h5 {
     font-size: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner .bannerText {
+    width: 100%;
   }
 }
 /*# sourceMappingURL=card.css.map */

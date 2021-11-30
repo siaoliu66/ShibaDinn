@@ -4,8 +4,8 @@
             <div class="header">
             <menubar/>
         </div>
-        <div class="wrap">
-            <div class="container" >
+        <div class="wrap" v-if="imgUrl">
+            <div class="container">
                 <img class="logoimg" :src="imgUrl" alt="">
                 <label for="price">商品金額</label>
                 <input type="number" class="form price" id="price" placeholder="請輸入日幣金額" v-model.number="price">

@@ -19,12 +19,16 @@ body {
 }
 
 .web .menu_container .nav {
-  border-radius: 0.25rem;
+  margin-top: 1.5rem;
 }
 
 .web .menu_container .nav .nav-item {
   border: 1px solid #c4cbcf;
   text-align: center;
+}
+
+.web .menu_container .form-mobile {
+  display: none;
 }
 
 .web .menu_container .cart {
@@ -38,6 +42,7 @@ body {
   text-align: center;
   line-height: 40px;
   z-index: 100;
+  border: 1px solid #c4cbcf;
 }
 
 .web .menu_container .cart .cartsnum {
@@ -58,8 +63,8 @@ body {
   line-height: 40px;
 }
 
-.web .menu_container .cart .form-mobile {
-  display: none;
+.container {
+  margin-top: 64px;
 }
 
 @media (max-width: 768px) {

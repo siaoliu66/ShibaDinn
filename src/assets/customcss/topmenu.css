@@ -28,7 +28,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url(../static/img/logo.jpg);
+  background-image: url(https://github.com/siaoliu66/ShibaDinn/blob/main/src/assets/img/logo.png?raw=true);
 }
 
 .header .menubar {
@@ -37,14 +37,13 @@
 
 .header .menubar li {
   float: left;
-  width: 180px;
   text-align: center;
 }
 
 .header .menubar li a {
   text-decoration: none;
   color: #6c757d;
-  font-size: 1.3em;
+  font-size: 16px;
 }
 
 .header .menubar li a:hover {
@@ -94,6 +93,7 @@
   .header .menubar li {
     float: none;
     width: 100%;
+    color: #6c757d;
   }
   .header .menubar li:hover {
     background-color: lightgray;
@@ -104,14 +104,14 @@
   .header .showmenu {
     display: block;
     float: right;
-    border: 1px solid #fff;
+    border: 1px solid #91969b;
     margin-right: 15px;
     padding: 6px;
     border-radius: 5px;
   }
   .header .showmenu .fas {
     font-size: 1.2em;
-    color: #fff;
+    color: #91969b;
   }
 }
 /*# sourceMappingURL=topmenu.css.map */

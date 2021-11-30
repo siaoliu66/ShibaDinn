@@ -19,10 +19,10 @@ import 'vue-loading-overlay/dist/vue-loading.css';
 Vue.component('Loading',Loading)
 
 
-// //CKEditor註冊到vue原型上
-import CKEditor from 'ckeditor4-vue';
 
-Vue.use( CKEditor );
+//vue-json-excel
+import JsonExcel from "vue-json-excel";
+Vue.component("downloadExcel", JsonExcel);
 
 /* eslint-disable no-new */
 new Vue({
@@ -33,7 +33,7 @@ new Vue({
 })
 
 import currencyFilter from './filters/currency'
-Vue.filter('currency',currencyFilter)
+Vue.filter('currency', currencyFilter )
 
 import { ValidationObserver, ValidationProvider, extend, localize, configure } from 'vee-validate';
 import TW from 'vee-validate/dist/locale/zh_TW.json'
@@ -95,3 +95,10 @@ router.beforeEach((to, from, next) => {
     next()
   }
 })
+
+//alert套件
+import VueSweetalert2 from 'vue-sweetalert2';
+
+// If you don't need the styles, do not connect
+import 'sweetalert2/dist/sweetalert2.min.css';
+Vue.use(VueSweetalert2);

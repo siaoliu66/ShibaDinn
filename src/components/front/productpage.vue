@@ -37,7 +37,7 @@
                       <th scope="row">團購價：</th>
                       <td>  NTD {{product.price}} </td>
                   </tr>
-                  <tr>
+                  <tr  v-if="product.content != '無'">
                       <th scope="row">款式：</th>
                       <td>
                             <select name="" class="form-control" v-model="product.unit">
@@ -79,7 +79,6 @@
           <div class="mb-3">
             <div class="h4">商品描述</div>
             <div class="productdes" v-html="product.description">
-                <!-- {{ filterText }} -->
             </div>
         </div>
         </div>
@@ -186,6 +185,9 @@ export default {
               var str = vm.product.content
               str = str.split(',')
               return str
+          }else if(vm.product.content == '無'){
+            var str = ''
+            return str
           }
           
       },

@@ -10,7 +10,7 @@ main {
 }
 
 .brand-wrapper {
-  margin-bottom: 19px;
+  text-align: center;
 }
 
 .brand-wrapper .logo {
@@ -49,10 +49,12 @@ main {
   color: #000;
   font-weight: normal;
   margin-bottom: 23px;
+  text-align: center;
 }
 
 .login-card form {
   max-width: 326px;
+  margin: 0 auto;
 }
 
 .login-card .form-control {

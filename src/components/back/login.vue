@@ -3,16 +3,16 @@
     <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
     <div class="container">
       <div class="card login-card">
-        <div class="row no-gutters">
-          <div class="col-md-6">
+        <div class="row no-gutters justify-content-md-center">
+          <!-- <div class="col-md-6">
             <img src="https://www.bootstrapdash.com/demo/login-template-free-1/assets/images/login.jpg" alt="login" class="login-card-img">
-          </div>
+          </div> -->
           <div class="col-md-6">
             <div class="card-body">
               <div class="brand-wrapper">
                 <img src="@/assets/img/Shiba-Dinn.png" alt="logo" class="logo">
               </div>
-              <p class="login-card-description">Login</p>
+              <p class="login-card-description">管理員登入</p>
               <form @submit.prevent="login()">
                   <div class="form-group">
                     <label for="email" class="sr-only">Email</label>
