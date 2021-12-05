@@ -7,10 +7,10 @@
         <menubar />
       </div>
       <div class="menu_container">
-        <div class="banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://i.pinimg.com/564x/e1/ed/d3/e1edd3acae760bd6ee50c2424dd7caa7.jpg')">
-            <div class="bannerText">
+        <div class="banner">
+            <!-- <div class="bannerText">
               <h3>日本團購 喜歡就趕快下單吧</h3>
-            </div>
+            </div> -->
         </div>
         <!-- 購物車 -->
         <div class="cart">
@@ -146,7 +146,11 @@
     <Footer/>
   </div>
 </template>
-<style src="@/assets/customcss/card.css" scoped></style>
+<style src="@/assets/customcss/card.css" scoped>
+.banner{
+  background-image: url(./img/menubanner.png );
+}
+</style>
 
 <script>
 import menubar from "./topmenu";

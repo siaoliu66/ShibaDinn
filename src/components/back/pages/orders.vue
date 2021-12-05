@@ -424,7 +424,7 @@ export default {
             callback: (value) => {
                 let title = "";
                 Object.keys(value).forEach(i => {
-                title += `${value[i].product.title},`;
+                title += `${value[i].product.title}\n`;
                 });
                 return title;
             },
