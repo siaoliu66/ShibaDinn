@@ -7,11 +7,7 @@
         <menubar />
       </div>
       <div class="menu_container">
-<<<<<<< HEAD
-        <div class="banner">
-=======
         <div class="banner" style="background-image:  url('https://github.com/siaoliu66/ShibaDinn/blob/main/src/assets/img/menubanner.png?raw=true')">
->>>>>>> 51e6da5 (更新menu)
             <!-- <div class="bannerText">
               <h3>日本團購 喜歡就趕快下單吧</h3>
             </div> -->

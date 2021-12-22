@@ -480,10 +480,6 @@ body {
   line-height: 1.8em;
 }
 
-.container .rommand .productdes img {
-  width: 100%;
-}
-
 @media (max-width: 414px) {
   .container .rommand .productdes {
     width: 100%;
