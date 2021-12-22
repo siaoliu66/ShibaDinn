@@ -1,0 +1,555 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*CSS RESET END*/
+body {
+  font-size: .875rem;
+}
+
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+/*
+   * Sidebar
+   */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  /* Behind the navbar */
+  padding-top: 40px;
+  -webkit-box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+          box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.table th, .table td {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    top: 5rem;
+  }
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #727272;
+}
+
+.sidebar .nav-link.active {
+  color: #007bff;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+/*
+   * Navbar
+   */
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);
+          box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);
+}
+
+.navbar {
+  position: fixed;
+  right: 0;
+  left: 0;
+}
+
+.navbar .navbar-toggler {
+  top: .25rem;
+  right: 1rem;
+}
+
+.navbar .form-control {
+  padding: .75rem 1rem;
+  border-width: 0;
+  border-radius: 0;
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-control-dark:focus {
+  border-color: transparent;
+  -webkit-box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+          box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+/*main*/
+main {
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  main {
+    margin-top: 60px !important;
+  }
+}
+
+.header {
+  z-index: 100;
+  background-color: #fff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  -webkit-transition: opacity .5s ease-out;
+  transition: opacity .5s ease-out;
+  -webkit-box-shadow: 0 2px 8px #6c757d;
+          box-shadow: 0 2px 8px #6c757d;
+}
+
+.header h1 {
+  float: left;
+  margin-left: 2%;
+}
+
+.header h1 .logo {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 250px;
+  height: 34px;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://github.com/siaoliu66/ShibaDinn/blob/main/src/assets/img/logo.png?raw=true);
+}
+
+.header .menubar {
+  float: right;
+}
+
+.header .menubar li {
+  float: left;
+  text-align: center;
+}
+
+.header .menubar li a {
+  text-decoration: none;
+  color: #6c757d;
+  font-size: 16px;
+}
+
+.header .menubar li a:hover {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.5em;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  text-decoration: underline;
+}
+
+.header .menubar li .menubar-list {
+  display: none;
+}
+
+.header .menubar li .menubar-list li {
+  margin-top: 15px;
+}
+
+.header .menubar li .menubar-list li a {
+  font-size: 1em;
+}
+
+.header .showmenu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header .menubar {
+    /*隱藏選單開始*/
+    display: none;
+    /*隱藏選單結束*/
+    /*漸變效果*/
+    -webkit-transition: max-height 2.3s;
+    transition: max-height 2.3s;
+    /*絕對定位疊在網頁上*/
+    position: absolute;
+    /*權重*/
+    z-index: 100;
+    /*header 80px+1px boder 線條*/
+    top: 64px;
+    /* left:0 right:0表示滿版 */
+    left: 0;
+    right: 0;
+    background: #0F222B;
+  }
+  .header .menubar li {
+    float: none;
+    width: 100%;
+    color: #6c757d;
+  }
+  .header .menubar li:hover {
+    background-color: lightgray;
+  }
+  .header .menubar li:hover a {
+    color: #000;
+  }
+  .header .showmenu {
+    display: block;
+    float: right;
+    border: 1px solid #91969b;
+    margin-right: 15px;
+    padding: 6px;
+    border-radius: 5px;
+  }
+  .header .showmenu .fas {
+    font-size: 1.2em;
+    color: #91969b;
+  }
+}
+
+body {
+  font-family: 'Balsamiq Sans','微軟正黑體',  cursive;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+.app {
+  background-color: #c4cbcf;
+  height: 100vh;
+}
+
+.breadcrumb {
+  background-color: #fff !important;
+  font-size: 16px;
+}
+
+.web .menu_container {
+  margin-top: 64px;
+}
+
+.web .menu_container .nav {
+  margin-top: 1.5rem;
+}
+
+.web .menu_container .nav .nav-item {
+  border: 1px solid #c4cbcf;
+  text-align: center;
+}
+
+.web .menu_container .form-mobile {
+  display: none;
+}
+
+.web .menu_container .cart {
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 3%;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  z-index: 100;
+  border: 1px solid #c4cbcf;
+}
+
+.web .menu_container .cart .cartsnum {
+  position: absolute;
+  color: #fff;
+  font-size: 0.875rem;
+  background-color: #dc3545;
+  right: -7px;
+  top: 0px;
+  line-height: 1rem;
+  min-width: 1rem;
+  padding: 0 4px;
+  border-radius: 0.725rem;
+}
+
+.web .menu_container .cart .fa-shopping-basket, .web .menu_container .cart .fa-heart {
+  font-size: 1.5em;
+  line-height: 40px;
+}
+
+.container {
+  margin-top: 64px;
+}
+
+@media (max-width: 768px) {
+  .web .menu_container .form-mobile {
+    display: block;
+  }
+  .web .menu_container .nav {
+    display: none;
+  }
+}
+
+@media (max-width: 414px) {
+  .web .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+.container .cart {
+  border-radius: 50%;
+  position: fixed;
+  bottom: 20px;
+  right: 3%;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  z-index: 100;
+  border: 1px solid #c4cbcf;
+}
+
+.container .cart .cartsnum {
+  position: absolute;
+  color: #fff;
+  font-size: 0.875rem;
+  background-color: #dc3545;
+  right: -7px;
+  top: 0px;
+  line-height: 1rem;
+  min-width: 1rem;
+  padding: 0 4px;
+  border-radius: 0.725rem;
+}
+
+.container .cart .fa-shopping-basket, .container .cart .fa-heart {
+  font-size: 1.5em;
+  line-height: 40px;
+}
+
+.container .back {
+  margin-top: 80px;
+}
+
+.container .product {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #a7a8bd;
+}
+
+.container .product .row {
+  padding-top: 20px;
+}
+
+.container .product .row .productImg {
+  margin: 10px auto;
+  height: 360px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container .product .row .producttext {
+  padding: 0 30px;
+}
+
+.container .product .row .producttext .productcat {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+.container .product .row .producttext .producttitle {
+  font-size: 1.5em;
+  font-weight: bolder;
+  padding: 10px;
+  border: 1px dashed;
+  letter-spacing: 1px;
+}
+
+.container .product .row .producttext table {
+  margin-bottom: 40px;
+}
+
+.container .product .row .producttext table th {
+  width: 100px;
+  vertical-align: middle;
+  text-align: left;
+  font-size: 1em;
+  font-size: 16px;
+}
+
+.container .product .row .producttext table td {
+  text-align: left;
+  font-size: 16px;
+}
+
+.container .product .row .producttext table td .form-control {
+  font-size: 1em;
+  height: auto;
+}
+
+.container .rommand {
+  padding-bottom: 10px;
+}
+
+.container .rommand .h4 {
+  margin-top: 15px;
+}
+
+.container .rommand .productdes {
+  margin-top: 20px;
+  line-height: 1.8em;
+}
+
+@media (max-width: 414px) {
+  .container .rommand .productdes {
+    width: 100%;
+  }
+  .container .rommand .productdes img {
+    width: 100%;
+  }
+}
+
+.footer {
+  background-color: #333437;
+  overflow: hidden;
+  padding-top: 10px;
+}
+
+.footer .footer-menu {
+  overflow: hidden;
+  padding: 30px;
+  max-width: 1280px;
+  margin: 0 auto;
+  color: #c4cbcf;
+  text-align: center;
+}
+
+.footer .footer-menu .downTitle {
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 1.5px;
+  line-height: 25px;
+}
+
+.footer .footer-menu .footerbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 10px;
+}
+
+.footer .footer-menu .footerbar li .title {
+  color: #666769;
+  margin-right: 10px;
+}
+
+.footer .footer-menu .footerbar li::after {
+  content: '|';
+  margin: 0 10px;
+}
+
+.footer .footer-menu .footerbar :last-child::after {
+  display: none;
+}
+
+.footer .footer-menu .footer-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 15px;
+}
+
+.footer .footer-menu .footer-link img {
+  width: 60%;
+}
+
+.footer .footer-menu .copyright {
+  color: #c4cbcf;
+}
+/*# sourceMappingURL=all.css.map */

@@ -1,0 +1,107 @@
+.container{
+    .cart {
+        border-radius: 50%;
+        position: fixed;
+        bottom: 20px;
+        right: 3%;
+        background-color: #fff;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        z-index: 100;
+        border: 1px solid #c4cbcf;
+        .cartsnum {
+            position: absolute;
+            color: #fff;
+            font-size: 0.875rem;
+            background-color: #dc3545;
+            right: -7px;
+            top: 0px;
+            line-height: 1rem;
+            min-width: 1rem;
+            padding: 0 4px;
+            border-radius: 0.725rem;
+        }
+        .fa-shopping-basket,.fa-heart {
+            font-size: 1.5em;
+            line-height: 40px;
+        }
+    }
+    .back{
+        margin-top: 80px;
+    }
+    .product{
+        padding-bottom: 10px;
+        border-bottom: 1px solid #a7a8bd;
+        .row{
+            padding-top: 20px;
+            .productImg{
+                margin: 10px auto;
+                height: 360px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .producttext {
+                padding: 0 30px;
+                .productcat{
+                    font-size: 1em;
+                    font-weight: normal;
+                }
+                .producttitle{
+                    font-size: 1.5em;
+                    font-weight: bolder;
+                    padding: 10px;
+                    border: 1px dashed;
+                    letter-spacing: 1px;
+                }
+                table{
+                    margin-bottom:40px;
+                    th{
+                        width: 100px;
+                        vertical-align: middle;
+                        text-align: left;
+                        font-size: 1em;
+                        font-size: 16px;
+                    }
+                    td{
+                        text-align: left;
+                        font-size: 16px;
+                        .form-control{
+                            font-size: 1em;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }   
+    }
+    .rommand{
+        padding-bottom: 10px;
+        .h4{
+            margin-top: 15px;
+        }
+        .productdes{
+            margin-top: 20px;
+            line-height: 1.8em;
+            // img{
+            //     width: 100%;
+            // }
+        }
+    }
+}
+
+@media (max-width: 414px) {
+    .container{
+        .rommand{
+            .productdes {
+                width: 100%; 
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+     
+}

@@ -1,0 +1,108 @@
+@charset "UTF-8";
+body {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.web {
+  padding-top: 25px;
+  padding-bottom: 20px;
+  min-height: 750px;
+}
+
+.web .wrap {
+  max-width: 588px;
+  padding: 15px;
+  width: 100%;
+  margin: auto;
+  background-color: #006973;
+  color: #ffd68c;
+  margin-top: 64px;
+}
+
+.web .wrap .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.web .wrap .container .logoimg {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.web .wrap .container label {
+  margin: 5px;
+  font-size: 1rem;
+}
+
+.web .wrap .container .form {
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+.web .wrap .container .input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.web .wrap .container .info {
+  color: #495057;
+  margin-left: 5px;
+}
+
+.web .wrap .container button {
+  width: 120px;
+  height: 35px;
+  font-size: 1rem;
+  border-radius: 25px;
+  margin: 5px auto;
+  border: 0;
+  background-color: white;
+  margin-top: 15px;
+}
+
+.web .wrap .text {
+  line-height: 1.3em;
+  margin-bottom: 10px;
+}
+
+.web .wrap .copy {
+  border-radius: 25px;
+  padding: 5px;
+}
+
+.web .wrap .copy button {
+  height: 35px;
+  width: 100px;
+  border-radius: 25px;
+  font-size: 1.1em;
+}
+
+/*pad*/
+@media screen and (max-width: 768px) {
+  .web {
+    min-height: auto;
+  }
+}
+
+/*手機板*/
+/*# sourceMappingURL=cal.css.map */

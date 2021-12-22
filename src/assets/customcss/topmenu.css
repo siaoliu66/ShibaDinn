@@ -1,0 +1,117 @@
+@charset "UTF-8";
+.header {
+  z-index: 100;
+  background-color: #fff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  -webkit-transition: opacity .5s ease-out;
+  transition: opacity .5s ease-out;
+  -webkit-box-shadow: 0 2px 8px #6c757d;
+          box-shadow: 0 2px 8px #6c757d;
+}
+
+.header h1 {
+  float: left;
+  margin-left: 2%;
+}
+
+.header h1 .logo {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 250px;
+  height: 34px;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url(https://github.com/siaoliu66/ShibaDinn/blob/main/src/assets/img/logo.png?raw=true);
+}
+
+.header .menubar {
+  float: right;
+}
+
+.header .menubar li {
+  float: left;
+  text-align: center;
+}
+
+.header .menubar li a {
+  text-decoration: none;
+  color: #6c757d;
+  font-size: 16px;
+}
+
+.header .menubar li a:hover {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.5em;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  text-decoration: underline;
+}
+
+.header .menubar li .menubar-list {
+  display: none;
+}
+
+.header .menubar li .menubar-list li {
+  margin-top: 15px;
+}
+
+.header .menubar li .menubar-list li a {
+  font-size: 1em;
+}
+
+.header .showmenu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header .menubar {
+    /*隱藏選單開始*/
+    display: none;
+    /*隱藏選單結束*/
+    /*漸變效果*/
+    -webkit-transition: max-height 2.3s;
+    transition: max-height 2.3s;
+    /*絕對定位疊在網頁上*/
+    position: absolute;
+    /*權重*/
+    z-index: 100;
+    /*header 80px+1px boder 線條*/
+    top: 64px;
+    /* left:0 right:0表示滿版 */
+    left: 0;
+    right: 0;
+    background: #0F222B;
+  }
+  .header .menubar li {
+    float: none;
+    width: 100%;
+    color: #6c757d;
+  }
+  .header .menubar li:hover {
+    background-color: lightgray;
+  }
+  .header .menubar li:hover a {
+    color: #000;
+  }
+  .header .showmenu {
+    display: block;
+    float: right;
+    border: 1px solid #91969b;
+    margin-right: 15px;
+    padding: 6px;
+    border-radius: 5px;
+  }
+  .header .showmenu .fas {
+    font-size: 1.2em;
+    color: #91969b;
+  }
+}
+/*# sourceMappingURL=topmenu.css.map */

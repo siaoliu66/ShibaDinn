@@ -1,0 +1,105 @@
+.header{
+    z-index: 100;
+    background-color:#fff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;     
+    top: 0;
+    transition: opacity .5s ease-out; 
+    box-shadow: 0 2px 8px #6c757d;
+    h1 {
+        float: left;
+        margin-left: 2%;
+        .logo{
+            overflow: hidden;
+            white-space: nowrap;
+            width: 250px;
+            height: 34px;
+            display: block;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            // background-image: url(../static/img/logo.jpg);
+            background-image: url(https://github.com/siaoliu66/ShibaDinn/blob/main/src/assets/img/logo.png?raw=true);
+        }
+    }
+    .menubar{
+        float: right;
+        li {
+            float: left;
+            text-align: center;
+            a{
+                text-decoration: none;
+                color:#6c757d;
+                font-size: 16px;
+            }
+            a:hover{
+                cursor: pointer;
+                font-weight: 500;
+                font-size:1.5em;
+                transform: scale(0.95);
+                text-decoration:underline
+            }
+            .menubar-list{
+                display: none;
+                li{
+                    margin-top: 15px;
+                    a{
+                        font-size: 1em;
+                    }
+                }
+            }
+        }
+    }
+    .showmenu{
+        display: none;  
+    }
+}
+
+@media (max-width: 768px){
+    .header{
+        .menubar{
+            /*隱藏選單開始*/
+            display: none;
+            /*隱藏選單結束*/
+            /*漸變效果*/
+            transition: max-height 2.3s;
+            /*絕對定位疊在網頁上*/
+            position: absolute;
+            /*權重*/
+            z-index: 100;
+            /*header 80px+1px boder 線條*/
+            top: 64px;
+            /* left:0 right:0表示滿版 */
+            left: 0;
+            right: 0;
+            background: #0F222B;
+            li{
+                float: none ;
+                width: 100% ;
+                color:#6c757d;
+                
+            }
+            li:hover{
+                background-color: lightgray;
+                a{
+                    color: #000;
+                }
+            }
+        }
+        .showmenu{
+            display: block;
+            float: right;
+            border: 1px solid #91969b;
+            margin-right: 15px;
+            padding: 6px;
+            border-radius: 5px;
+            .fas{
+                font-size: 1.2em;
+                color: #91969b;
+            }
+        }
+    }
+}
