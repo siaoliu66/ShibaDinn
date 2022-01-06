@@ -14,7 +14,18 @@
             </ol>
           </nav>
       <div class="intro">
-        <img src="@/assets/img/shippinglist.png" alt="">
+        <!-- <img src="@/assets/img/shippinglist.png" alt=""> -->
+        <p>
+          🌟購物須知🌟</p>
+
+<p>📍下單完成產生訂單後，至官方LINE告知姓名或訂單編號，索取匯款資訊</p>
+
+<p>📍付款方式：轉帳(提供郵局及多家銀行帳號)；暫無刷卡服務</p>
+
+<p>📍寄送方式及運費：超商店到店(四大超商皆可)，運費60元。</p>
+
+<p>📍到貨時間：收單後約7-14天抵台理貨寄出，寄出後會私訊通知。
+        </p>
       </div>
         
     </div>
@@ -48,11 +59,10 @@ export default {
 .container {
   margin-top: 64px;
   .intro{
-    padding: 3%;
-    display: flex;
-    justify-content: center;
-    img{
-      width: 80%;
+    padding: 20px;
+    p{
+      font-size: 1.3rem;
+      margin-bottom: 20px;
     }
   }
   nav{

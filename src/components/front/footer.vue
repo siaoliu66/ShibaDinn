@@ -12,20 +12,21 @@
           <a
             href="https://www.facebook.com/ShibaDinn"
             target="_blank"
-            title="牛老大facebook"
+            title="shiba-dinn的facebook"
           >
             <img src="@/assets/img/fb.png" alt="" />
           </a>
-          <a href="https://www.instagram.com/shiba_dinn/" target="_blank" title="ig">
+          <a href="https://www.instagram.com/shiba_dinn/" target="_blank" title="shiba-dinn的ig">
             <img src="@/assets/img/ig.png" alt="" />
           </a>
           <a
-            href="line://nv/recommendOA/@dhy0299u"
+            href="https://lin.ee/2J53gzq"
             target="_blank"
-            title="line"
+            title="shiba-dinn的line"
           >
             <img src="@/assets/img/line.png" alt="" />
           </a>
+          
         </div>
         <p class="copyright">Copyright © 2021 Shiba Dinn版權所有.</p>
       </div>

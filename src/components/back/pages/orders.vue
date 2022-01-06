@@ -29,7 +29,7 @@
           <th>購買數量</th>
           <th>訂單金額</th>
           <th>是否附款</th>
-          <th>訂單狀況</th> 
+          <!-- <th>訂單狀況</th>  -->
         </tr>
       </thead>
       <tbody>
@@ -70,10 +70,10 @@
                 {{ productitem.qty}}
               </li>
             </ul></td>
-          <td>{{ item.total | currency }}</td>
+          <td>{{ item.total+60 | currency }}</td>
           <td v-if="item.is_paid" class="text-success">已付款</td>
           <td v-else class="text-danger">尚未付款</td>
-          <th>未出貨</th> 
+          <!-- <th>未出貨</th>  -->
         </tr>
       </tbody>
     </table>
@@ -113,6 +113,10 @@
                   </tr>
                   <tr>
                     <th scope="row">訂購人LINE名稱</th>
+                    <td>{{ tempProduct.user.line }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">超商門市</th>
                     <td>{{ tempProduct.user.address }}</td>
                   </tr>
                   <tr>
@@ -136,7 +140,7 @@
                   </tr>
                   <tr>
                     <th scope="row">總金額</th>
-                    <td>{{ tempProduct.total | currency }}</td>
+                    <td>{{ tempProduct.total+60 | currency }}</td>
                   </tr>
                   <tr>
                     <th scope="row">付款狀態</th>
@@ -180,9 +184,15 @@
                                 <td class="text-right" >{{ filtercoupon }}</td>
                             </tr> -->
                   <tr>
+                    <td colspan="3" class="text-right">超商運費</td>
+                    <td class="text-right">
+                      {{ 60 | currency }}
+                    </td>
+                  </tr>
+                  <tr>
                     <td colspan="3" class="text-right">總計</td>
                     <td class="text-right">
-                      {{ tempProduct.total | currency }}
+                      {{ tempProduct.total+60 | currency }}
                     </td>
                   </tr>
                 </tfoot>
@@ -479,14 +489,17 @@ export default {
             const year = dates1.getFullYear();
             const month = dates1.getMonth() + 1;
             const date = dates1.getDate();
-            item.create_at = `${year}/${month}/${date}`;
+            const Hour = dates1.getHours();
+            const Min = dates1.getMinutes();
+            item.create_at = `${year}/${month}/${date} ${Hour}:${Min}`;
             const dates2 = new Date(item.paid_date * 1000);
             const year2 = dates2.getFullYear();
             const month2 = dates2.getMonth() + 1;
             const date2 = dates2.getDate();
-            item.paid_date = `${year2}/${month2}/${date2}`;
+            const Hour2 = dates2.getHours();
+            const Min2 = dates2.getMinutes();
+            item.paid_date = `${year2}/${month2}/${date2} ${Hour2}:${Min2}`;
           }); //讓Unix Timestamp轉回一般日期格式顯示
-          this.asd()
         });
         
     },
@@ -508,18 +521,6 @@ export default {
     editerModal(item) {
       this.tempProduct = Object.assign({}, item);
       $("#editerModal").modal("show");
-    },
-    asd(){
-      this.lists.forEach(i =>{
-        var value = i.products
-        // console.log(value[Object.keys(value)])
-        // value.forEach(function(item){
-        //   console.log(item)
-        // })
-        Object.keys(value).forEach(i => {
-           console.log(value[i].title);
-        });
-      })
     },
   },
   computed: {

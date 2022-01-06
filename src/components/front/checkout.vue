@@ -12,7 +12,13 @@
       <h4 class="text-center h3">訂單編號 : {{ order.id }}</h4>
       <div class="content">
         <div class="highlight">
-          感謝您的訂購，匯款完成後<span style="font-weight:bolder;text-decoration: underline;letter-spacing">請務必私訊官方LINE</span>告知帳號末5碼，以便團隊後續審核。
+           感謝您的訂購，請點擊 
+           <a href="https://lin.ee/2J53gzq" class="clickme" target="_blank" > 此連結 
+
+          
+           <!--圖片 <img src="@/assets/img/click1.png" alt="" /> -->
+           </a>   
+           至官方LINE告知姓名或編號，索取匯款資訊，以便後續團隊作業。
         </div>
       </div>
       <table class="table table-striped">
@@ -38,12 +44,12 @@
           </tr>
           <tr>
             <td colspan="2" class="text-right"></td>
-            <td>運費:</td>
-            <td>60</td>
+            <td>運費：</td>
+            <td>{{60 | currency }}</td>
           </tr>
           <tr class="sum">
             <td colspan="2" class="text-right"></td>
-            <td>總計:</td>
+            <td>總計：</td>
             <td>{{ (order.total + 60) | currency }}</td>
           </tr>
         </tbody>
@@ -76,9 +82,12 @@
     font-size: 16px;
     padding: 10px;
     margin-bottom: 20px;
-    letter-spacing: 2px;
-    .highlight{
-      color:red;
+     .highlight{
+      // display: flex;
+      // align-items: center;
+      img{
+        margin: auto 5px;
+      }
     }
     ul{
       margin-left: 45px;
@@ -111,6 +120,9 @@
   .container{
     .content,.table{
       width: 100%;
+      .highlight{
+        line-height: 1.5em;
+      }
     }
   }
   

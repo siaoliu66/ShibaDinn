@@ -54,7 +54,7 @@
                 {{ productitem.qty}}
               </li>
             </ul></td>
-          <td data-label="訂單金額">{{ item.total | currency }}</td>
+          <td data-label="訂單金額">{{ item.total+60 | currency }}</td>
           <td data-label="是否附款" v-if="item.is_paid" class="text-success">已付款</td>
           <td data-label="是否附款" v-else class="text-danger">尚未付款</td>
           <td data-label="訂單狀況">未出貨</td> 

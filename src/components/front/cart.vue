@@ -118,7 +118,7 @@
                                     </div>
                                 </div> -->
                                 <div class="text-right">
-                                    <router-link class="btn btn-primary" to="/menu"> 繼續點餐 </router-link>
+                                    <router-link class="btn btn-primary" to="/menu"> 繼續逛逛 </router-link>
                                     <button class="btn btn-danger" @click="createOrder()" :disabled="invalid">送出訂單</button>
                                 </div>
                                 </ValidationObserver>
