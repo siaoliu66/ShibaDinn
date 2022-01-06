@@ -18,7 +18,11 @@
           
            <!--圖片 <img src="@/assets/img/click1.png" alt="" /> -->
            </a>   
+
            至官方LINE告知姓名或編號，索取匯款資訊，以便後續團隊作業。
+
+           至官方LINE告知訂購人姓名及編號，索取匯款資訊，以便後續團隊作業。
+
         </div>
       </div>
       <table class="table table-striped">
