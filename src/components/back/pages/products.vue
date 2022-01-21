@@ -2,7 +2,7 @@
   <div>
     <loading :active.sync="isLoading"></loading>
     <div class="text-right mt-4">
-      <button class="btn btn-primary" @click="addProduct(true)">
+      <button class="btn btn-primary" @click="addProduct(true, pagination.current_page)">
         建立新的產品
       </button>
     </div>
@@ -30,7 +30,7 @@
           <td>
             <button
               class="btn btn-outline-primary btn-sm"
-              @click="addProduct(false, item)"
+              @click="addProduct(false , pagination.current_page, item)"
             >
               編輯
             </button>
@@ -327,15 +327,16 @@ export default {
         vm.pagination = response.data.pagination;
       });
     },
-    addProduct(isNew, item) {
+    addProduct(isNew, page, item) {
+      console.log(isNew, item, page)
       if (isNew) {
         this.tempProduct = {};
         this.isNew = true;
-        this.$router.push(`/admin/editor/-`);
+        this.$router.push(`/admin/editor/-?page=${page}`);
       } else {
         this.tempProduct = Object.assign({}, item);
         this.isNew = false;
-        this.$router.push(`/admin/editor/${item.id}`);
+        this.$router.push(`/admin/editor/${item.id}?page=${page}`);
       }    
     },
     updateProduct() {
@@ -383,7 +384,7 @@ export default {
           )
         } else if (
           /* Read more about handling dismissals below */
-          result.dismiss === Swal.DismissReason.cancel
+          result.dismiss === this.$swal.DismissReason.cancel
         ) {
           swalWithBootstrapButtons.fire(
             '取消',

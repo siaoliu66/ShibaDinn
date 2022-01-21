@@ -18,7 +18,7 @@
                 <div><input type="submit" value="查詢"  class="btn btn-primary" @click="searchlist"></div>
             </div>
         </div>
-                   <table class="table mt-4" v-if="templist[0]">
+      <table class="table mt-4" v-if="templist[0]">
       <thead>
         <tr>
           <th>訂單編號</th>
@@ -57,7 +57,7 @@
           <td data-label="訂單金額">{{ item.total+60 | currency }}</td>
           <td data-label="是否附款" v-if="item.is_paid" class="text-success">已付款</td>
           <td data-label="是否附款" v-else class="text-danger">尚未付款</td>
-          <td data-label="訂單狀況">未出貨</td> 
+          <td data-label="訂單狀況">{{ item.user.status}}</td> 
         </tr>
       </tbody>
     </table>

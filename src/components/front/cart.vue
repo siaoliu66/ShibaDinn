@@ -62,7 +62,6 @@
                                         </td>
                                     </tr>
                                 </tbody>
-                                
                             </table>                            
                         </div>
                         <div class="cart-group">
@@ -104,7 +103,10 @@
                             </ValidationProvider>
                                 <div class="form-group">
                                 <label for="comment" class="m-1">留言</label>
-                                <textarea name="" id="comment" class="form-control" cols="30" rows="10" v-model="form.message" placeholder="若要合併請在此留言訂單編號。"></textarea>
+                                <textarea name="message" id="comment" class="form-control" cols="30" rows="10" v-model="form.message" placeholder="若要合併請在此留言訂單編號。"></textarea>
+                                </div>
+                                <div class="form-group" style="display:none">
+                                    <input v-model="form.status" name="status">
                                 </div>
                                 <!-- <div class="form-group">
                                     <label for="conpon" class="m-1">優惠碼</label>
@@ -122,6 +124,7 @@
                                     <button class="btn btn-danger" @click="createOrder()" :disabled="invalid">送出訂單</button>
                                 </div>
                                 </ValidationObserver>
+                                
                             </div>
                     </div>
                 <!-- </div> -->
@@ -191,7 +194,8 @@ export default {
                     email:'',
                     tel:'',
                     address:'',
-                    line:''
+                    line:'',
+                    status:'未確認'
                 },
                 message:''
             }

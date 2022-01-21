@@ -34,11 +34,11 @@
           <table class="table table-borderless">
               <tbody>
                   <tr>
-                      <th scope="row">團購價：</th>
+                      <th scope="row">團購價: </th>
                       <td>  NTD {{product.price}} </td>
                   </tr>
                   <tr  v-if="product.content != '無'">
-                      <th scope="row">款式：</th>
+                      <th scope="row">款式: </th>
                       <td>
                             <select name="" class="form-control" v-model="product.unit">
                                 <option :value="content" v-for="content in filterContent" :key="content">
@@ -48,7 +48,7 @@
                       </td>
                   </tr>
                   <tr>
-                      <th scope="row">數量：</th>
+                      <th scope="row">數量: </th>
                       <td>
                           <select name="" class="form-control mb-2" v-model="product.num">
                             <option :value="num" v-for="num in 10" :key="num">

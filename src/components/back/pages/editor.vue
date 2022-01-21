@@ -141,6 +141,7 @@ export default {
       products: [],
       tempProduct: {},
       product_id: "",
+      page_id: "",
       isNew: true,
       status: {
         Fileuploading: false,
@@ -265,8 +266,11 @@ export default {
     tinymce.init({});
   },
   created() {
-    this.getProducts();
     this.product_id = this.$route.params.product_id;
+    this.page_id = this.$route.query.page;
+    if(this.page_id){
+      this.getProducts(this.page_id)
+    }
   },
 };
 </script>

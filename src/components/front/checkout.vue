@@ -43,17 +43,17 @@
           </tr>
           <tr>
             <td colspan="2" class="text-right"></td>
-            <td>小計：</td>
+            <td>小計 : </td>
             <td>{{ order.total | currency }}</td>
           </tr>
           <tr>
             <td colspan="2" class="text-right"></td>
-            <td>運費：</td>
+            <td>運費 : </td>
             <td>{{60 | currency }}</td>
           </tr>
           <tr class="sum">
             <td colspan="2" class="text-right"></td>
-            <td>總計：</td>
+            <td>總計 : </td>
             <td>{{ (order.total + 60) | currency }}</td>
           </tr>
         </tbody>
